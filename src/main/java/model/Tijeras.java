@@ -2,10 +2,6 @@ package model;
 
 public class Tijeras {
 
-	public String nombre;
-	
-	
-	
 	public static String batalla(String s) {
 		switch (s) {
 		case "Papel":
@@ -17,9 +13,7 @@ public class Tijeras {
 		case "Spock":
 			return "Spock aplasta a ";
 		}
-		return s;
+		return "sfads";
 		
 	}
-	
-	
 }

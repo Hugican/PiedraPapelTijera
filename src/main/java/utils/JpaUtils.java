@@ -4,15 +4,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class JpaUtils {
+
 	private static final EntityManagerFactory emf;
 	
 	static {
-		try {
-			emf =  Persistence.createEntityManagerFactory("Game");
+		try{
+			emf = Persistence.createEntityManagerFactory("Juego");
 		}catch(Throwable ex) {
-			System.out.println("el juego no inicio" + ex.getMessage());
-			throw new ExceptionInInitializerError();
-		}	
+			System.out.println("La factoria no inicio " + ex.getMessage());
+			throw new ExceptionInInitializerError(ex);
+		}
 		
 	}
 	

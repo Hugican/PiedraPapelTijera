@@ -3,12 +3,12 @@ package dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import model.Resultado;
+import model.Contrincante;
 import utils.JpaUtils;
 
-public class DaoResultado {
+public class DaoContrincante {
 
-	public static void create(Resultado p) {
+	public static void create(Contrincante p) {
 		EntityManager em=JpaUtils.getEmf().createEntityManager();
 		em.getTransaction().begin();
 		try {
@@ -23,11 +23,11 @@ public class DaoResultado {
 		
 	}
 
-	public static Resultado find(Long id) {
+	public static Contrincante find(Long id) {
 		EntityManager em=JpaUtils.getEmf().createEntityManager();
-		Resultado p=null;
+		Contrincante p=null;
 		try {
-		p=em.find(Resultado.class, id);
+		p=em.find(Contrincante.class, id);
 		}catch (Exception e) {
 			System.out.println("no se encontro" + e.getMessage());
 		}finally {
@@ -36,7 +36,7 @@ public class DaoResultado {
 		return p;
 	}
 
-	public static void update(Resultado p) {
+	public static void update(Contrincante p) {
 		EntityManager em=JpaUtils.getEmf().createEntityManager();
 		EntityTransaction tx=em.getTransaction();
 		tx.begin();
@@ -59,7 +59,7 @@ public class DaoResultado {
 		EntityManager em=JpaUtils.getEmf().createEntityManager();
 		em.getTransaction().begin();
 		try {
-			Resultado p=em.find(Resultado.class, id);
+			Contrincante p=em.find(Contrincante.class, id);
 			em.remove(p); // Delete * from personas where personas.id= id
 			em.getTransaction().commit();
 		}catch (Exception e) {
